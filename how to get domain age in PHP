@@ -1,0 +1,14 @@
+        <?php
+            //// Description:
+            //********************************************************************************/
+            // The purpose for this code is to find the domain age. 
+            // Please enter the key and domain before you run the code , /
+            // For information, please visit https://www.ip2whois.com /
+            //********************************************************************************/
+            $apiKey = 'Enter_License_Key';
+            $domain = 'Enter_Domain_Name';
+            $url = "https://api.ip2whois.com/v1?key=$apiKey&domain=$domain";            
+            $data = json_decode(file_get_contents($url),true);
+            echo "<br>Domain: ",$data['domain'], "<br>";
+            echo "Domain Age: ",$data['domain_age'] ," days<br><br>";
+        ?>
